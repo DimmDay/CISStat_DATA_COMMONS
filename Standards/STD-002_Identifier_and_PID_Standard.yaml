@@ -1,0 +1,264 @@
+###############################################################################
+# CIS Data Commons
+# STD-002 Knowledge Object Identifier & Persistent Identifier Standard
+#
+# Canonical YAML Configuration
+###############################################################################
+
+standard:
+
+  id: STD-002
+
+  title: Knowledge Object Identifier and Persistent Identifier Standard
+
+  version: 1.0.0
+
+  status: Draft
+
+###############################################################################
+# HUMAN READABLE IDENTIFIERS
+###############################################################################
+
+human_identifier:
+
+  enabled: true
+
+  pattern: "<PREFIX>-<NUMBER>"
+
+  number:
+
+    digits: 3
+
+    padding: zero
+
+  examples:
+
+    - GOV-001
+    - ADR-001
+    - ARC-001
+    - REQ-001
+    - STD-001
+    - DM-001
+    - API-001
+    - ONT-001
+    - META-001
+    - KG-001
+    - SRV-001
+    - PORT-001
+    - SEC-001
+    - TEST-001
+    - OPS-001
+    - AI-001
+
+###############################################################################
+# PERSISTENT IDENTIFIERS
+###############################################################################
+
+persistent_identifier:
+
+  enabled: true
+
+  scheme: URN
+
+  namespace: cidc
+
+  pattern: "urn:cidc:{type}:{id}"
+
+  examples:
+
+    - urn:cidc:adr:001
+    - urn:cidc:req:014
+    - urn:cidc:dm:004
+    - urn:cidc:api:007
+    - urn:cidc:ontology:indicator
+
+###############################################################################
+# HTTP URI
+###############################################################################
+
+http_identifier:
+
+  enabled: true
+
+  base_uri: "https://knowledge.cisstat.org/id"
+
+  pattern: "{base}/{human_id}"
+
+  examples:
+
+    - https://knowledge.cisstat.org/id/ADR-001
+    - https://knowledge.cisstat.org/id/REQ-012
+    - https://knowledge.cisstat.org/id/DM-004
+
+###############################################################################
+# KNOWLEDGE GRAPH URI
+###############################################################################
+
+graph_identifier:
+
+  enabled: true
+
+  namespace: cis
+
+  pattern: "cis:{type}:{id}"
+
+  examples:
+
+    - cis:adr:001
+    - cis:req:012
+    - cis:dataset:population
+    - cis:indicator:gdp
+
+###############################################################################
+# PREFIX REGISTRY
+###############################################################################
+
+prefixes:
+
+  GOV:
+    class: GovernanceDocument
+
+  ADR:
+    class: ArchitectureDecision
+
+  ARC:
+    class: ArchitecturePrinciple
+
+  STD:
+    class: Standard
+
+  REQ:
+    class: Requirement
+
+  RFC:
+    class: RequestForChange
+
+  DM:
+    class: DataModel
+
+  API:
+    class: OpenAPI
+
+  ONT:
+    class: Ontology
+
+  META:
+    class: Metadata
+
+  KG:
+    class: KnowledgeGraph
+
+  SRV:
+    class: Service
+
+  PORT:
+    class: Portal
+
+  INF:
+    class: Infrastructure
+
+  SEC:
+    class: Security
+
+  TEST:
+    class: Test
+
+  OPS:
+    class: Operations
+
+  AI:
+    class: AIComponent
+
+###############################################################################
+# IDENTIFIER POLICY
+###############################################################################
+
+policy:
+
+  immutable: true
+
+  reusable: false
+
+  globally_unique: true
+
+  persistent: true
+
+  case_sensitive: false
+
+###############################################################################
+# FILE NAMING
+###############################################################################
+
+file_naming:
+
+  pattern: "<ID>_<Title>.md"
+
+  examples:
+
+    - ADR-001_Repository_as_Enterprise_Knowledge_System.md
+    - GOV-002_Repository_Governance.md
+    - ARC-000_Architecture_Principles.md
+    - DM-001_Indicator.md
+    - API-001_Indicators.yaml
+
+###############################################################################
+# KNOWLEDGE OBJECT URI
+###############################################################################
+
+knowledge_object:
+
+  canonical_identifier:
+
+    human_id: ADR-001
+
+    pid: urn:cidc:adr:001
+
+    uri: https://knowledge.cisstat.org/id/ADR-001
+
+    graph_uri: cis:adr:001
+
+###############################################################################
+# SEMANTIC WEB
+###############################################################################
+
+semantic:
+
+  linked_data: true
+
+  rdf: true
+
+  owl: true
+
+  skos: true
+
+  schema_org: true
+
+###############################################################################
+# VALIDATION
+###############################################################################
+
+validation:
+
+  duplicate_identifier: forbidden
+
+  identifier_change: forbidden
+
+  prefix_validation: required
+
+  pid_validation: required
+
+  uri_validation: required
+
+###############################################################################
+# VERSIONING
+###############################################################################
+
+versioning:
+
+  identifier_independent_of_version: true
+
+  document_versioning: semantic
+
+###############################################################################
+# END
+###############################################################################

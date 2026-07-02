@@ -1,0 +1,256 @@
+---
+###############################################################################
+# CIS Data Commons
+# Enterprise Document Manifest
+#
+# Standard:
+# STD-001 Knowledge Object Manifest Standard (KOMS)
+#
+# This metadata block is mandatory for every document
+# stored in the CIS Data Commons Enterprise Repository.
+###############################################################################
+
+# ============================================================================
+# DOCUMENT IDENTITY
+# ============================================================================
+
+id: GOV-001
+
+title: Governance Framework
+
+short_title: Governance
+
+artifact:
+
+  type: document
+
+  class: governance
+
+  subtype: standard
+
+version: 1.0.0
+
+status: Draft
+
+language: en
+
+classification: Public
+
+###############################################################################
+# LIFECYCLE
+###############################################################################
+
+created: 2026-06-30
+
+updated: 2026-06-30
+
+effective_date: 2026-07-01
+
+review_date: 2027-07-01
+
+expires: null
+
+###############################################################################
+# OWNERSHIP
+###############################################################################
+
+owner:
+
+  organization: CIS Data Commons
+
+  division: Enterprise Architecture
+
+  committee: Architecture Review Board
+
+  role: Owner
+
+authors:
+
+  - id: ARCH-001
+
+    name: Chief Architect
+
+    role: Lead Architect
+
+reviewers:
+
+  - Architecture Review Board
+
+approver:
+
+  - Chief Architect
+
+###############################################################################
+# DOCUMENT RELATIONS
+###############################################################################
+
+relationships:
+
+  governance:
+
+    - GOV-001
+
+    - GOV-002
+
+  principles:
+
+    - ARC-001
+
+  requirements:
+
+    - REQ-ARCH-001
+
+  adr:
+
+    - ADR-001
+
+  standards:
+
+    - STD-002
+
+  api: []
+
+  data_models: []
+
+  ontology: []
+
+  metadata: []
+
+  knowledge_graph: []
+
+  services: []
+
+  portal: []
+
+  infrastructure: []
+
+  tests: []
+
+###############################################################################
+# LIFECYCLE RELATIONS
+###############################################################################
+
+supersedes: null
+
+superseded_by: null
+
+derived_from: []
+
+references: []
+
+###############################################################################
+# DOMAIN
+###############################################################################
+
+domain:
+
+  - Enterprise Architecture
+
+  - Governance
+
+subdomain:
+
+  - Repository Governance
+
+###############################################################################
+# TAGGING
+###############################################################################
+
+tags:
+
+  - governance
+
+  - architecture
+
+  - repository
+
+  - enterprise
+
+  - knowledge
+
+keywords:
+
+  - Enterprise Architecture
+
+  - Repository
+
+  - Knowledge Graph
+
+###############################################################################
+# KNOWLEDGE GRAPH
+###############################################################################
+
+knowledge_object: true
+
+persistent_identifier: GOV-001
+
+graph_node_type: GovernanceDocument
+
+uri:
+
+  cis://governance/GOV-001
+
+###############################################################################
+# SEMANTIC WEB
+###############################################################################
+
+schema_org:
+
+  "@context": "https://schema.org"
+
+  "@type": TechArticle
+
+rdf_class: cis:GovernanceDocument
+
+owl_class: cis:GovernanceDocument
+
+###############################################################################
+# AI
+###############################################################################
+
+ai:
+
+  rag: true
+
+  embedding: true
+
+  chunking: automatic
+
+  mcp: true
+
+  searchable: true
+
+  summarizable: true
+
+###############################################################################
+# DOCUMENT QUALITY
+###############################################################################
+
+approved: false
+
+quality_status: Draft
+
+traceability: Complete
+
+###############################################################################
+# REPOSITORY
+###############################################################################
+
+repository:
+
+  name: CIS Data Commons
+
+  path: Governance/GOV-001_Governance_Framework.md
+
+branch: main
+
+###############################################################################
+# LICENSE
+###############################################################################
+
+license: CC-BY-4.0
+
+###############################################################################
+# END OF MANIFEST
+###############################################################################
+---

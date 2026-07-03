@@ -1,0 +1,26 @@
+name: Repository Structure
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  structure:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Verify repository structure
+        run: |
+          test -d Governance
+          test -d ADR
+          test -d Standards
+          test -d Architecture
+          test -d "Data Models"
+          test -d Ontology
+          test -d "Knowledge Graph"
+          test -d OpenAPI
+          test -d Portal

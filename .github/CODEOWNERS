@@ -1,0 +1,40 @@
+# ============================================================================
+# CIS Data Commons
+# CODEOWNERS
+# ============================================================================
+
+# Default owner
+* @DimmDay
+
+# Governance
+/Governance/ @DimmDay
+
+# Architecture
+/Architecture/ @DimmDay
+
+# Standards
+/Standards/ @DimmDay
+
+# ADR
+/ADR/ @DimmDay
+
+# Requirements
+/Requirements/ @DimmDay
+
+# Data Models
+/Data Models/ @DimmDay
+
+# OpenAPI
+/OpenAPI/ @DimmDay
+
+# Ontology
+/Ontology/ @DimmDay
+
+# Knowledge Graph
+/Knowledge Graph/ @DimmDay
+
+# Portal
+/Portal/ @DimmDay
+
+# Infrastructure
+/Infrastructure/ @DimmDay

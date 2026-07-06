@@ -1,0 +1,39 @@
+---
+extends: default
+
+ignore: |
+  .git/
+  node_modules/
+  .next/
+  dist/
+  build/
+
+rules:
+  truthy:
+    allowed-values:
+      - "true"
+      - "false"
+      - "on"
+      - "off"
+
+  line-length:
+    max: 120
+    level: warning
+
+  comments-indentation: disable
+
+  document-start:
+    present: true
+
+  new-line-at-end-of-file:
+    present: true
+
+  trailing-spaces:
+    level: error
+
+  indentation:
+    spaces: 2
+    indent-sequences: true
+
+  empty-lines:
+    max: 2

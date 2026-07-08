@@ -1,0 +1,4 @@
+title = "CIS Data Commons Gitleaks Configuration"
+
+[extend]
+useDefault = true

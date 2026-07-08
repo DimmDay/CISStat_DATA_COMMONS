@@ -1,4 +1,6 @@
-# GOV-002 Repository Governance Standard (что должен, что следует, что допускается, что запрещается - соответствует ГОСТ, ISO и IEEE)
+---
+# GOV-002 Repository Governance Standard
+# Отвечает на вопрос - что должен, что следует, что допускается, что запрещается - соответствует ГОСТ, ISO и IEEE.
 
 Project: CIS Data Commons
 Document ID: GOV-002

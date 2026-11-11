@@ -261,5 +261,44 @@ versioning:
   document_versioning: semantic
 
 ###############################################################################
+# NAMESPACE REGISTRY
+###############################################################################
+
+# Все пространства имен платформы регистрируются централизованно.
+# Каждое пространство имен имеет единственного владельца (Namespace Owner).
+# Регистрация новых пространств имен осуществляется исключительно по решению Architecture Review Board.
+# Использование незарегистрированных пространств имен запрещается.
+
+Для каждого Namespace должны быть определены:
+
+  - Namespace Identifier;
+  - Official Name;
+  - Owning Organization;
+  - Canonical Authority;
+  - Responsible Domain Owner;
+  - Allowed Object Types;
+  - URI Prefix;
+  - Status.
+
+# | Namespace | Owner                                    | Canonical Authority | Prefix                                                          |
+# | --------- | ---------------------------------------- | ------------------- | ----------------------------------------------------------------|
+# | cisstat   | CIS Statistical Committee                | Metadata Domain     | [https://id.cisstat.org/](https://id.cisstat.org/)              |
+# | nso-kaz   | Bureau of National Statistics Kazakhstan | Kazakhstan          | [https://id.stat.gov.kz/](https://id.stat.gov.kz/)              |
+# | belstat   | Belstat                                  | Belarus             | [https://id.belstat.by/](https://id.belstat.by/)                |
+# | eurostat  | Eurostat                                 | Eurostat            | [https://ec.europa.eu/eurostat/](https://ec.europa.eu/eurostat/)|
+
+статусы Namespace:
+
+  Draft
+    ↓
+  Registered
+    ↓
+  Deprecated
+    ↓
+  Retired
+
+# утверждение статуса - Architecture Review Board.
+
+###############################################################################
 # END
 ###############################################################################

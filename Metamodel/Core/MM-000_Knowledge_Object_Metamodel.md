@@ -79,7 +79,8 @@ Knowledge Object
 │
 └── Service
 
-# Identity
+# Identity / Подлинность
+
 Здесь фиксируется принцип:
 У объекта существует одна неизменяемая идентичность.
 
@@ -90,7 +91,7 @@ Knowledge Object
 - URI представления;
 - формата сериализации.
 
-# Relationships
+# Relationships / Отношения
 
 Стандартный словарь отношений:
 - implements
@@ -112,6 +113,7 @@ Knowledge Object
 - supersedes
 
 # Представления
+
 Один объект может существовать одновременно в разных формах.
 
 Knowledge Object
@@ -129,6 +131,7 @@ Knowledge Object
 Это означает, что Markdown-файл — лишь одно из представлений объекта, а не сам объект.
 
 # Метамодель как основа графа знаний
+
 Каждый Knowledge Object должен автоматически становиться узлом графа знаний.
 Минимальные свойства узла:
 
@@ -144,6 +147,7 @@ Knowledge Object
 - Semantic Definition
 
 # Правила соответствия
+
 Каждый Knowledge Object обязан:
 
 - иметь уникальную идентичность;
@@ -155,6 +159,7 @@ Knowledge Object
 - иметь семантическое описание.
 
 # Knowledge Object Contract
+
 Каждый объект должен удовлетворять контракту, включающему:
 
 - идентичность;
@@ -168,3 +173,87 @@ Knowledge Object
 - требования к управлению.
 
 Тогда все последующие типы объектов (ADR, REQ, DM, ONT, API, KG, Dataset, Indicator, Time Series) будут не просто документами или файлами, а специализированными реализациями единого Knowledge Object Contract. Это сделает архитектуру CIS Data Commons чрезвычайно последовательной и подготовленной к автоматической обработке, интеграции с графом знаний и работе ИИ-агентов через MCP.
+
+# Standards Alignment / Согласование стандартов
+
+| Knowledge Object Type      | External Standard | Mapping                  |
+| -------------------------- | ----------------- | ------------------------ |
+| Classification             | SKOS              | skos:ConceptScheme       |
+| Classification Item        | SKOS              | skos:Concept             |
+| Statistical Classification | XKOS              | xkos:ClassificationLevel |
+| Dataset                    | DCAT              | dcat:Dataset             |
+| Distribution               | DCAT              | dcat:Distribution        |
+| Metadata Record            | ADMS              | adms:Asset               |
+| Vocabulary                 | SKOS              | skos:ConceptScheme       |
+| API                        | OpenAPI           | OpenAPI Document         |
+| Ontology                   | OWL               | owl:Ontology             |
+
+Каждый объект знаний может объявлять одно или несколько внешних семантических представлений посредством conformsTo.
+
+# Versioning Policy / Политика версионирования
+
+Правила версионирования major.minor.patch:
+
+## PATCH
+
+Исправления.
+Никакие ссылки не ломаются.
+1.0.1
+
+## MINOR
+
+Добавлены новые свойства.
+Все старые объекты продолжают работать.
+1.2.0
+
+## MAJOR
+
+Изменена семантика объекта.
+Требуется миграция.
+2.0.0
+
+## Replacement Knowledge Object / Замена объектов знаний
+
+Knowledge Object может заменить Knowledge Object только через отношение supersedes, а не изменение существующего объекта.
+
+## Dataset dependency / Зависимость датасета
+
+Если существует зависимость Dataset от Classification v1, то Classification v2 не должна автоматически заменить v1.
+Иначе нарушится воспроизводимость статистики.
+
+## AI Agent
+
+Agent:
+
+  имеет возможности:
+    - create/создавать
+    - classify/классифицировать
+    - annotate/аннотировать
+    - summarize/кратко излагать
+    - recommend/рекомендовать
+    - validate/проверять
+    - infer/делать вывод
+
+  имеет ограничения:
+
+    mayModify/вносить изменения: false
+    mayDelete/удалять: false
+    mayApprove/утверждать: false
+    mayPublish/публиковать: false
+    modifies Canonical Classification/изменять классификации: false
+    modifies Ontology/изменять онтологии: false
+    deletes Knowledge Object/удалять объект знаний: false
+    requiresHumanApproval/требовать одобрение человека: true
+
+  допустимые отношения:
+    creates/создавать: Dataset, Metadata, Report/отчет
+    reads/читать: Classification, Ontology
+
+  уровень доверия:
+    Advisory/консультации
+       ↓
+    Assisted/оказание помощи
+       ↓
+    Operational/действие
+       ↓
+    Autonomous/автономность

@@ -1,53 +1,96 @@
 ---
 name: Requirement
-about: Add a new requirement
+about: Register a new business, functional, or architectural requirement
 title: "[REQ] "
-labels: requirements
+labels:
+  - requirements
+assignees: []
 ---
 
 # Requirement Description
+
+Опишите требование.
 
 ---
 
 ## Category
 
-- Functional
-- Non-Functional
-- Security
-- Metadata
-- API
-- Semantic
-- Performance
+- [ ] Functional
+- [ ] Non-functional
+- [ ] Security
+- [ ] Metadata
+- [ ] API
+- [ ] Semantic
+- [ ] Performance
+- [ ] Governance
+- [ ] AI
+- [ ] Data Quality
+- [ ] Interoperability
+
+---
+
+## Knowledge Domain
+
+- [ ] Portal
+- [ ] Statistics
+- [ ] Metadata
+- [ ] Knowledge Graph
+- [ ] Reference Data
+- [ ] AI
+- [ ] Infrastructure
+- [ ] Security
 
 ---
 
 ## Priority
 
-- Critical
-- High
-- Medium
-- Low
+- [ ] Critical
+- [ ] High
+- [ ] Medium
+- [ ] Low
+
+---
+
+## Status
+
+- [ ] Draft
+- [ ] Approved
+- [ ] Implemented
+- [ ] Verified
+- [ ] Deprecated
 
 ---
 
 ## Source
 
-Документ
+Document:
 
-Заинтересованная сторона
+Stakeholder:
 
-Нормативный акт
+Regulation:
+
+Reference:
 
 ---
 
-## Traceability
+## Related Knowledge Objects
 
-ADR:
+- REQ:
+- ADR:
+- ARC:
+- GOV:
+- STD:
+- MM:
+- DM:
+- API:
+- ONT:
 
-ARC:
+---
 
-DM:
+## Acceptance Criteria
 
-API:
-
-ONT:
+- [ ] Requirement approved
+- [ ] Traceability established
+- [ ] Related Knowledge Objects identified
+- [ ] Architecture impact analysed
+- [ ] Acceptance tests defined

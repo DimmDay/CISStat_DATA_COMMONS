@@ -1,6 +1,10 @@
 # ============================================================================
 # CIS Data Commons
 # CODEOWNERS
+#
+# Repository ownership rules.
+# GitHub evaluates rules from top to bottom.
+# The last matching rule takes precedence.
 # ============================================================================
 
 # Default owner

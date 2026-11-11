@@ -210,6 +210,38 @@ branch: main
 license: CC-BY-4.0
 
 ###############################################################################
+# GOVERNANCE
+###############################################################################
+
+governance:
+
+  status: approved
+
+  authority: Architecture Review Board
+
+  approvalId: ARB-2026-014
+
+  approvedAt: 2026-07-03
+
+  approvedBy:
+
+    - Chief Architect
+
+    - Metadata Domain Owner
+
+  integrity:
+
+    algorithm: SHA-256
+
+    digest: <hash>
+
+  evidence:
+
+    type: git-commit
+
+    reference: cb64777
+
+
+###############################################################################
 # END OF MANIFEST
 ###############################################################################
----

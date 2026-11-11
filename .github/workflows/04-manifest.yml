@@ -1,18 +1,36 @@
+---
 name: Knowledge Object Manifest Validation
 
 on:
   push:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  manifest:
+  manifest-validation:
+    name: Validate Knowledge Object Manifests
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Manifest validation
+      - name: Manifest validation (placeholder)
         run: |
-          echo "Manifest validation will be implemented after STD-001 JSON Schema is approved."
+          echo "Knowledge Object Manifest validation is currently disabled."
+          echo "Validation will be enabled after:"
+          echo "  - STD-001 reaches Approved status;"
+          echo "  - JSON Schema is published;"
+          echo "  - Validation rules are approved by the Architecture Review Board."

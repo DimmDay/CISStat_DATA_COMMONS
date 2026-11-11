@@ -1,75 +1,60 @@
 ---
 name: Architecture Proposal
-about: Propose an architectural principle, component or structural change
+about: Propose an architectural principle, component, or structural change
 title: "[ARCH] "
-labels: architecture
-assignees: ""
+labels:
+  - architecture
+assignees: []
 ---
 
-# Summary
+### Summary
 
-Краткое описание архитектурного предложения.
+### Problem Statement
 
----
+### Proposed Solution
 
-## Problem Statement
+### Related Knowledge Objects
 
-Какую проблему необходимо решить?
+- ADR:
+- REQ:
+- ARC:
+- GOV:
+- STD:
+- MM:
+- DM:
+- API:
+- ONT:
 
----
+### Knowledge Object Impact
 
-## Proposed Solution
+- [ ] New Knowledge Objects
+- [ ] Existing Knowledge Objects modified
 
-Опишите предлагаемое решение.
+### Standards Alignment
 
----
+- [ ] SKOS
+- [ ] XKOS
+- [ ] ADMS
+- [ ] DCAT
+- [ ] RDF
+- [ ] OWL
 
-## Related Knowledge Objects
+### Impact Analysis
 
-ADR:
+- [ ] Portal
+- [ ] DataHub
+- [ ] EIAS
+- [ ] SUZSOD
+- [ ] TS Analysis
+- [ ] Knowledge Graph
+- [ ] API Gateway
 
-REQ:
+### Risks
 
-ARC:
-
-DM:
-
-API:
-
-ONT:
-
-STD:
-
----
-
-## Alternatives Considered
-
-Какие варианты были рассмотрены?
-
----
-
-## Impact Analysis
-
-Какие подсистемы затрагиваются?
-
-- Portal
-- DataHub
-- EIAS
-- SUZSOD
-- TS Analysis
-- Knowledge Graph
-- API Gateway
-
----
-
-## Risks
-
-Какие риски существуют?
-
----
-
-## Acceptance Criteria
+### Acceptance Criteria
 
 - [ ] Architecture Review Board approval
-- [ ] ADR created
+- [ ] ADR created (if required)
 - [ ] Traceability updated
+- [ ] Document Manifest updated
+- [ ] Knowledge Object Identifier assigned

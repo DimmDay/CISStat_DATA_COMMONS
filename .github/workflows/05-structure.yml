@@ -1,26 +1,67 @@
+---
 name: Repository Structure
 
 on:
   push:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   structure:
+    name: Validate Repository Structure
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - name: Verify repository structure
+      - name: Verify required directories
         run: |
-          test -d Governance
-          test -d ADR
-          test -d Standards
-          test -d Architecture
-          test -d "Data Models"
-          test -d Ontology
-          test -d "Knowledge Graph"
-          test -d OpenAPI
-          test -d Portal
+          directories=(
+            "Architecture"
+            "ADR"
+            "Governance"
+            "Standards"
+            "Metamodel"
+            "Ontology"
+            "Knowledge Graph"
+            "Data Models"
+            "OpenAPI"
+            "Portal"
+          )
+
+          for dir in "${directories[@]}"; do
+            if [ ! -d "$dir" ]; then
+              echo "Missing directory: $dir"
+              exit 1
+            fi
+          done
+
+      - name: Verify required files
+        run: |
+          files=(
+            "README.md"
+            "LICENSE"
+            "PROJECT_STATE.md"
+            "Architecture/ARC-000_Architecture_Principles.md"
+            "Governance/GOV-001_Governance_Framework.md"
+          )
+
+          for file in "${files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Missing file: $file"
+              exit 1
+            fi
+          done

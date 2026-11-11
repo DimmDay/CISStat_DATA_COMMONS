@@ -1,17 +1,45 @@
+---
 name: Link Checker
 
 on:
   push:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
   links:
+    name: Check Documentation Links
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Check links
         uses: lycheeverse/lychee-action@v2
+        with:
+          args: >
+            --verbose
+            --no-progress
+            --exclude "http://localhost.*"
+            --exclude "https://localhost.*"
+            --exclude "127.0.0.1.*"
+            --exclude "^urn:.*"
+            --exclude "^pid:.*"
+            --exclude "^doi:.*"
+            --exclude "^ark:.*"
+            "**/*.md"
+
+          fail: true

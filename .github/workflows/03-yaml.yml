@@ -1,16 +1,33 @@
+---
 name: YAML Validation
 
 on:
   push:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
   pull_request:
-    branches: [main, develop]
+    branches:
+      - main
+      - develop
+
+  workflow_dispatch:
+
+permissions:
+  contents: read
 
 jobs:
-  yamllint:
+  yaml-validation:
+    name: Validate YAML files
     runs-on: ubuntu-latest
+    timeout-minutes: 10
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-      - uses: ibiqlik/action-yamllint@v3
+      - name: Validate YAML
+        uses: ibiqlik/action-yamllint@v3
+        with:
+          config_file: .yamllint

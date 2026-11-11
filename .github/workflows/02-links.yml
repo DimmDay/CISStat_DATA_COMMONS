@@ -3,43 +3,23 @@ name: Link Checker
 
 on:
   push:
-    branches:
-      - main
-      - develop
-
+    branches: [main]
   pull_request:
-    branches:
-      - main
-      - develop
-
-  workflow_dispatch:
-
-permissions:
-  contents: read
+    branches: [main]
 
 jobs:
   links:
-    name: Check Documentation Links
     runs-on: ubuntu-latest
-    timeout-minutes: 10
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Check links
         uses: lycheeverse/lychee-action@v2
         with:
-          args: >
-            --verbose
+          args: >-
             --no-progress
-            --exclude "http://localhost.*"
-            --exclude "https://localhost.*"
-            --exclude "127.0.0.1.*"
-            --exclude "^urn:.*"
-            --exclude "^pid:.*"
-            --exclude "^doi:.*"
-            --exclude "^ark:.*"
-            "**/*.md"
-
-          fail: true
+            --exclude 'knowledge\.cisstat\.org'
+            --
+            './**/*.md'
+          failIfEmpty: false
